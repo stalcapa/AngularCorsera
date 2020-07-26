@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AdmVisitantes"
+    }
+  },
+  "defaultProject": "AdmVisitantes",
+  "cli": {
+    "analytics": false
+  }
 }
