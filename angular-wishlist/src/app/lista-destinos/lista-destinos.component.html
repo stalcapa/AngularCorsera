@@ -11,7 +11,9 @@
                     <h3 class="mb-0">WishList</h3>
                 </div>
                 <div class="card-body">
-                    <form>
+                  <app-form-destino-viaje (onItemAdded) = "agregado($event)" ></app-form-destino-viaje>
+                  <!--
+                  <form>
                       <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombre>
@@ -22,6 +24,7 @@
                       </div>
                       <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value, url.value)">Guardar!</button>
                     </form>
+                    --> 
                 </div>
             </div>
         </div>
@@ -30,7 +33,19 @@
     <hr class="mb-5">
 
     <div class="row row-flex">
-        <app-destino-viaje *ngFor="let d of destinos" [destino]="d"></app-destino-viaje>
+        <app-destino-viaje 
+        *ngFor= "let d of destinosApiClient.getAll(); let i=index" 
+        [destino]="d"
+        [idx]="i"
+        (clicked)="elegido(d)"
+        ></app-destino-viaje>
+    </div>
+
+    <hr class="mb-5">
+    <div class="row row-flex">
+        <h5>actividad</h5>
+        <ul>
+            <li *ngFor="let u of updates;">{{u}}</li>
+        </ul>
     </div>
 </div>
-
