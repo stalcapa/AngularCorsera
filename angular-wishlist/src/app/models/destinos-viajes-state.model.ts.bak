@@ -14,12 +14,12 @@ export interface DestinosViajesState {
     favorito: DestinoViaje;
 }
 
-export const intializeDestinosViajesState = function(){
-    return {
-	    items: [],
-	    loading: false,
-	    favorito: null
-    };
+export function intializeDestinosViajesState() {
+  return {
+    items: [],
+    loading: false,
+    favorito: null
+  };
 };
 
 // ACCIONES
